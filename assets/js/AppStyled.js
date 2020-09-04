@@ -4,9 +4,8 @@ import theme from './styles/theme';
 const AppStyled = styled.div`
   width: 100vw;
   height: 100vh;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  display: flex;
+  flex-direction: column;
   background-color: ${theme.colors.lightBg};
   color: ${theme.colors.lightColor};
   &.theme-dark {
@@ -14,8 +13,18 @@ const AppStyled = styled.div`
     color: ${theme.colors.darkColor};
   }
   .theme-switcher-wrap {
-    width: 100%;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    padding: 1rem;
+    .icons-switcher {
+      font-size: 1.3rem;
+      margin: 0 0.5rem;
+      color: #ffd600;
+    }
+    .icons-switcher::last-child {
+      margin-right: 0;
+    }
     .theme-switcher-label {
       display: inline-block;
       cursor: pointer;
