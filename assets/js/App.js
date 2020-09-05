@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
+import BrightnessMediumIcon from '@material-ui/icons/BrightnessMedium';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AppStyled from './AppStyled';
+import Home from './pages/Home';
 
 const App = () => {
   const [isDark, setIsDark] = useState(false);
@@ -20,22 +20,22 @@ const App = () => {
   return (
     <AppStyled className={`app ${isDark ? 'theme-dark' : ''}`}>
       <div className="theme-switcher-wrap">
-        <Brightness7Icon className="icons-switcher" />
-        <label
-          aria-label="switch theme"
-          className={`theme-switcher-label ${isDark ? 'active' : ''}`}
+        <BrightnessMediumIcon
+          className={`icons-switcher ${isDark ? 'active' : ''}`}
+        />
+        <a
+          title="Toggle the website theme"
           onClick={handleSwitcher}
+          className={`text-switcher ${isDark ? 'active' : ''}`}
         >
-          <div className="switch-path">
-            <div className="switch-handle"></div>
-          </div>
-        </label>
-        <Brightness4Icon className="icons-switcher" />
+          {isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+        </a>
       </div>
 
       <Router>
         <Switch>
           <Route exact path="/">
+            <Home />
           </Route>
           <Route exact path="/adoption">
             <h1>Adoption</h1>

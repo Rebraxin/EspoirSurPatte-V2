@@ -1,8 +1,10 @@
 export default {
-  colors: {
-    lightBg: '#f5f5f5',
-    lightColor: '#121212',
-    darkBg: '#121212',
-    darkColor: '#fff',
+  lightColors: {
+    bgColor: '#f5f5f5',
+    textColor: '#121212',
   },
+  darkColors: {
+    bgColor: '#121212',
+    textColor: '#f5f5f5',
+  }
 };

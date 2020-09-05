@@ -4,52 +4,32 @@ import theme from './styles/theme';
 const AppStyled = styled.div`
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: ${theme.colors.lightBg};
-  color: ${theme.colors.lightColor};
+  background-color: ${theme.lightColors.bgColor};
+  color: ${theme.lightColors.textColor};
   &.theme-dark {
-    background-color: ${theme.colors.darkBg};
-    color: ${theme.colors.darkColor};
+    background-color: ${theme.darkColors.bgColor};
+    color: ${theme.darkColors.textColor};
   }
   .theme-switcher-wrap {
     display: flex;
     justify-content: flex-end;
     align-items: right;
-    padding: 1rem;
+    padding: 0.5rem 0.8rem;
     .icons-switcher {
-      font-size: 1.3rem;
-      margin: 0 0.5rem;
-      color: #ffd600;
-    }
-    .icons-switcher::last-child {
-      margin-right: 0;
-    }
-    .theme-switcher-label {
-      display: inline-block;
       cursor: pointer;
-      .switch-path {
-        width: 40px;
-        height: 20px;
-        border-radius: 10px;
-        background: #ccc;
-        transition: all 0.3s ease-in-out;
-        .switch-handle {
-          background: #999;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          transition: all 0.3s ease-in-out;
-        }
-      }
+      font-size: 1.2rem;
+      color: ${theme.lightColors.textColor};
       &.active {
-        .switch-path {
-          background: #555;
-        }
-        .switch-handle {
-          transform: translateX(20px);
-          background: #7bbb5e;
-        }
+        color: ${theme.darkColors.textColor};
+      }
+    }
+    .text-switcher {
+      cursor: pointer;
+      padding-left: 0.2rem;
+      color: ${theme.lightColors.textColor};
+      font-size: 0.8rem;
+      &.active {
+        color: ${theme.darkColors.textColor};
       }
     }
   }
