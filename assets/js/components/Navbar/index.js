@@ -4,7 +4,14 @@ import NavbarStyled from './NavbarStyled'
 const Navbar = () => {
   return (
     <NavbarStyled>
-      My Navbar !
+      <a href="#">EspoirSurPattes</a>
+      <ul>
+        <li>Adoption</li>
+        <li>News</li>
+        <li>Association</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
     </NavbarStyled>
   )
 }

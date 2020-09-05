@@ -11,13 +11,16 @@ const AppStyled = styled.div`
     color: ${theme.darkColors.textColor};
   }
   .theme-switcher-wrap {
+    width: 75%;
+    min-width: 1200px;
+    margin: auto;
     display: flex;
     justify-content: flex-end;
-    align-items: right;
-    padding: 0.5rem 0.8rem;
+    align-items: center;
+    padding: 0.5rem 0;
     .icons-switcher {
       cursor: pointer;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: ${theme.lightColors.textColor};
       &.active {
         color: ${theme.darkColors.textColor};
