@@ -1,19 +1,32 @@
-import React from 'react'
-import NavbarStyled from './NavbarStyled'
+import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import NavbarStyled from './NavbarStyled';
 
 const Navbar = () => {
   return (
     <NavbarStyled>
-      <a href="#">EspoirSurPattes</a>
+      <Link to="/">
+        <p href="#">EspoirSurPattes</p>
+      </Link>
       <ul>
-        <li>Adoption</li>
-        <li>News</li>
-        <li>Association</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li>
+          <NavLink to="/adoption">Adoption</NavLink>
+        </li>
+        <li>
+          <NavLink to="/news">News</NavLink>
+        </li>
+        <li>
+          <NavLink to="/association">Association</NavLink>
+        </li>
+        <li>
+          <NavLink to="/about">About</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact">Contact</NavLink>
+        </li>
       </ul>
     </NavbarStyled>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

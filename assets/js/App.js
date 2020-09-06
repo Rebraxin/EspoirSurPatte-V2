@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import BrightnessMediumIcon from '@material-ui/icons/BrightnessMedium';
 import AppStyled from './AppStyled';
 import Home from './pages/Home';
+import Navbar from './components/Navbar';
 
 const App = ({ isDark, setDarkTheme, setLightTheme }) => {
   useEffect(() => {
@@ -19,20 +20,20 @@ const App = ({ isDark, setDarkTheme, setLightTheme }) => {
   };
   return (
     <AppStyled className={`app ${isDark ? 'theme-dark' : ''}`}>
-      <div className="theme-switcher-wrap">
-        <BrightnessMediumIcon
-          className={`icons-switcher ${isDark ? 'active' : ''}`}
-        />
-        <a
-          title="Toggle the website theme"
-          onClick={handleSwitcher}
-          className={`text-switcher ${isDark ? 'active' : ''}`}
-        >
-          {isDark ? 'Switch to light theme' : 'Switch to dark theme'}
-        </a>
-      </div>
-
       <Router>
+        <div className="theme-switcher-wrap">
+          <BrightnessMediumIcon
+            className={`icons-switcher ${isDark ? 'active' : ''}`}
+          />
+          <a
+            title="Toggle the website theme"
+            onClick={handleSwitcher}
+            className={`text-switcher ${isDark ? 'active' : ''}`}
+          >
+            {isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+          </a>
+        </div>
+        <Navbar/>
         <Switch>
           <Route exact path="/">
             <Home />

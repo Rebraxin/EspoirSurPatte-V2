@@ -5,6 +5,6 @@ export default {
   },
   darkColors: {
     bgColor: '#121212',
-    textColor: '#f5f5f5',
+    textColor: '#bb86fc',
   }
 };
