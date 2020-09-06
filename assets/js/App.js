@@ -1,21 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import BrightnessMediumIcon from '@material-ui/icons/BrightnessMedium';
+import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { setDarkTheme, setLightTheme } from './actions';
+import BrightnessMediumIcon from '@material-ui/icons/BrightnessMedium';
 import AppStyled from './AppStyled';
 import Home from './pages/Home';
 
 const App = () => {
-  const [isDark, setIsDark] = useState(false);
+  const isDark = useSelector((state) => state.isDark);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('theme-color');
-    currentThemeColor === 'theme-dark' ? setIsDark(true) : setIsDark(false);
+    currentThemeColor === 'theme-dark'
+      ? dispatch(setDarkTheme())
+      : dispatch(setLightTheme());
   }, []);
 
   const handleSwitcher = () => {
     isDark
       ? localStorage.setItem('theme-color', 'theme-light')
       : localStorage.setItem('theme-color', 'theme-dark');
-    isDark ? setIsDark(false) : setIsDark(true);
+    isDark
+      ? dispatch(setLightTheme())
+      : dispatch(setDarkTheme());
   };
   return (
     <AppStyled className={`app ${isDark ? 'theme-dark' : ''}`}>

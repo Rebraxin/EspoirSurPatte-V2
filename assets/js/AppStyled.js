@@ -31,8 +31,15 @@ const AppStyled = styled.div`
       padding-left: 0.2rem;
       color: ${theme.lightColors.textColor};
       font-size: 0.8rem;
+      border-bottom: 1px solid transparent;
       &.active {
         color: ${theme.darkColors.textColor};
+        &:hover {
+        border-bottom: 1px solid ${theme.darkColors.textColor};
+      }
+      }
+      &:hover {
+        border-bottom: 1px solid ${theme.lightColors.textColor};
       }
     }
   }
