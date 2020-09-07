@@ -4,10 +4,11 @@ import theme from './styles/theme';
 const AppStyled = styled.div`
   width: 100vw;
   height: 100vh;
-  background-color: ${theme.lightColors.bgColor};
+  font-family: ${theme.fonts.textFont};
+  background-color: ${theme.lightColors.background};
   color: ${theme.lightColors.textColor};
   &.theme-dark {
-    background-color: ${theme.darkColors.bgColor};
+    background-color: ${theme.darkColors.background};
     color: ${theme.darkColors.textColor};
   }
 `;

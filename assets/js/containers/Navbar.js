@@ -2,8 +2,7 @@
 import { connect } from 'react-redux';
 
 // == Import local
-import App from '../App';
-import { setDarkTheme, setLightTheme } from '../actions';
+import Navbar from '../components/Navbar';
 
 // == Fetch datas from state
 const mapStateToProps = (state) => ({
@@ -15,7 +14,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = () => ({});
 
 // == Building container
-const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
+const NavbarContainer = connect(mapStateToProps, mapDispatchToProps)(Navbar);
 
 // == Export default container
-export default AppContainer;
+export default NavbarContainer;

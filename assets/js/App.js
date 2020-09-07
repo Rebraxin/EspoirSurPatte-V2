@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppStyled from './AppStyled';
 import Home from './pages/Home';
-import Navbar from './components/Navbar';
+import Navbar from './containers/Navbar';
 import ThemeToggler from './containers/ThemeToggler';
 
 const App = ({ isDark }) => {

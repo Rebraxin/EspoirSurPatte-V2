@@ -1,32 +1,39 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import NavbarStyled from './NavbarStyled';
 
-const Navbar = () => {
+const Navbar = ({ isDark }) => {
   return (
-    <NavbarStyled>
-      <Link to="/">
-        <p href="#">EspoirSurPattes</p>
-      </Link>
-      <ul>
-        <li>
-          <NavLink to="/adoption">Adoption</NavLink>
-        </li>
-        <li>
-          <NavLink to="/news">News</NavLink>
-        </li>
-        <li>
-          <NavLink to="/association">Association</NavLink>
-        </li>
-        <li>
-          <NavLink to="/about">About</NavLink>
-        </li>
-        <li>
-          <NavLink to="/contact">Contact</NavLink>
-        </li>
-      </ul>
+    <NavbarStyled className={`${isDark ? 'theme-dark' : ''}`}>
+      <div>
+        <Link className="brand" to="/">
+          EspoirSurPattes
+        </Link>
+        <ul>
+          <li>
+            <NavLink className="nav-links" to="/adoption"><span>Adoption</span></NavLink>
+          </li>
+          <li>
+            <NavLink className="nav-links" to="/news"><span>News</span></NavLink>
+          </li>
+          <li>
+            <NavLink className="nav-links" to="/association"><span>Association</span></NavLink>
+          </li>
+          <li>
+            <NavLink className="nav-links" to="/about"><span>About</span></NavLink>
+          </li>
+          <li>
+            <NavLink className="nav-links" to="/contact"><span>Contact</span></NavLink>
+          </li>
+        </ul>
+      </div>
     </NavbarStyled>
   );
+};
+
+Navbar.propTypes = {
+  isDark: PropTypes.bool.isRequired,
 };
 
 export default Navbar;

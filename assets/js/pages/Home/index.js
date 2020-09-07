@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar';
 const Home = () => {
   return (
     <HomeStyled>
-      <h1>Home</h1>
+      <h1></h1>
     </HomeStyled>
   );
 };
