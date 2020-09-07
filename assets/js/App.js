@@ -1,39 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import BrightnessMediumIcon from '@material-ui/icons/BrightnessMedium';
 import AppStyled from './AppStyled';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
+import ThemeToggler from './containers/ThemeToggler';
 
-const App = ({ isDark, setDarkTheme, setLightTheme }) => {
-  useEffect(() => {
-    const currentThemeColor = localStorage.getItem('theme-color');
-    currentThemeColor === 'theme-dark' ? setDarkTheme() : setLightTheme();
-  }, []);
-
-  const handleSwitcher = () => {
-    isDark
-      ? localStorage.setItem('theme-color', 'theme-light')
-      : localStorage.setItem('theme-color', 'theme-dark');
-    isDark ? setLightTheme() : setDarkTheme();
-  };
+const App = ({ isDark }) => {
   return (
-    <AppStyled className={`app ${isDark ? 'theme-dark' : ''}`}>
+    <AppStyled className={`${isDark ? 'theme-dark' : ''}`}>
       <Router>
-        <div className="theme-switcher-wrap">
-          <BrightnessMediumIcon
-            className={`icons-switcher ${isDark ? 'active' : ''}`}
-          />
-          <a
-            title="Toggle the website theme"
-            onClick={handleSwitcher}
-            className={`text-switcher ${isDark ? 'active' : ''}`}
-          >
-            {isDark ? 'Switch to light theme' : 'Switch to dark theme'}
-          </a>
-        </div>
-        <Navbar/>
+        <ThemeToggler />
+        <Navbar />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -61,8 +39,6 @@ const App = ({ isDark, setDarkTheme, setLightTheme }) => {
 
 App.propTypes = {
   isDark: PropTypes.bool.isRequired,
-  setLightTheme: PropTypes.func.isRequired,
-  setDarkTheme: PropTypes.func.isRequired,
 };
 
 export default App;
