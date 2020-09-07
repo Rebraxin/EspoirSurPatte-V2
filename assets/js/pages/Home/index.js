@@ -1,11 +1,11 @@
 import React from 'react';
 import HomeStyled from './HomeStyled';
-import Navbar from '../../components/Navbar';
+import HomeWidget from '../../components/HomeWidget';
 
 const Home = () => {
   return (
     <HomeStyled>
-      <h1></h1>
+      <HomeWidget />
     </HomeStyled>
   );
 };

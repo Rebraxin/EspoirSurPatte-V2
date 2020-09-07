@@ -13,7 +13,7 @@ export default {
     primary: '#bb86fc',
     primaryVariant: '#3700b3',
     secondary: '03dac6',
-    textColor: '#d2d2d2',
+    textColor: '#ffffff',
     error: '#cf6679',
   },
   gradients: {
@@ -22,5 +22,15 @@ export default {
   fonts: {
     textFont: "'Roboto', sans-serif",
     brandFont: "'Fredoka One', cursive",
+  },
+  layouts: {
+    layoutDektop : 'only screen and (min-width: 1920px)',
+    layoutDesktopXs: 'only screen and (min-width: 1600px) and (max-width: 1919px)',
+    layoutLaptop : 'only screen and (min-width: 1200px) and (max-width: 1599px)',
+    layoutNotebook: 'only screen and (min-width: 992px) and (max-width: 1199px)',
+    layoutTablet : 'only screen and (min-width: 768px) and (max-width: 991px)',
+    layoutMobileLg : 'only screen and (max-width: 767px)',
+    layoutMobileSm : 'only screen and (max-width: 575px)',
+    layoutMobileXs : 'only screen and (max-width: 480px)',
   }
 };
